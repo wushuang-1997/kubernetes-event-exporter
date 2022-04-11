@@ -11,5 +11,6 @@ RUN addgroup -g 1000 nonroot && \
 COPY --from=builder --chown=nonroot:nonroot /main /kubernetes-event-exporter
 
 USER nonroot:nonroot
+RUN ls -l /kubernetes-event-exporter
 
 CMD ["/kubernetes-event-exporter"]
